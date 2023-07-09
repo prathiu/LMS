@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      -POSTGRES_USER=postgres
+      -POSTGRES_PASSWORD=password
+      -POSTGRES_DB=mydb
+    ports:
+      -"5432:5432"
+  
+  web:
+    image: front
+    build: test/
+    ports:
+      -"8081:80"
+    depends_on:
+      - db

@@ -29,9 +29,10 @@ services:
   web-server:
     image: lms-web
     build: webapp/
-    environment:
-      - MODE=local
-      - API_URL=http://18.117.110.34:8080/
+ 
+    env_file:
+      - backend.env 
+      
     ports:
       - "80:80"
     depends_on:

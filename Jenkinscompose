@@ -1,0 +1,17 @@
+pipeline {
+    agent {
+      label 'docker'
+    }
+
+  
+    stages {
+        
+
+        stage('Building the docker image') {
+            steps {
+                 sh 'docker-compose up -d'
+            }
+        }
+}
+        
+}

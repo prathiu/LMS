@@ -29,9 +29,9 @@ services:
   web-server:
     image: lms-web
     build: webapp/
- 
-    
-      
+    environment:
+      - MODE=local
+      - API_URL=http://api-server:8080
     ports:
       - "80:80"
     depends_on:

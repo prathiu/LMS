@@ -31,7 +31,7 @@ services:
     build: webapp/
     environment:
       - MODE=local
-      - API_URL=http://api-server:8080
+      - API_URL=http://18.117.110.34:8080/api
     ports:
       - "80:80"
     depends_on:
